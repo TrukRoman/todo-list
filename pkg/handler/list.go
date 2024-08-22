@@ -4,7 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"strconv"
-	todo "todo-app"
+	todo "todo-app/pkg/entities"
 )
 
 // @Summary Create item

@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"github.com/dgrijalva/jwt-go"
 	"time"
-	todo "todo-app"
+	todo "todo-app/pkg/entities"
 	"todo-app/pkg/repository"
 )
 

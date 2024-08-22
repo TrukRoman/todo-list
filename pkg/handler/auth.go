@@ -3,7 +3,7 @@ package handler
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
-	todo "todo-app"
+	todo "todo-app/pkg/entities"
 )
 
 // @Summary SignUp

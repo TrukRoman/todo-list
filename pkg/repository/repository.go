@@ -2,20 +2,20 @@ package repository
 
 import (
 	"github.com/jmoiron/sqlx"
-	todo "todo-app"
+	"todo-app/pkg/entities"
 )
 
 type Authorization interface {
-	CreateUser(user todo.User) (int, error)
-	GetUser(username, password string) (todo.User, error)
+	CreateUser(user entities.User) (int, error)
+	GetUser(username, password string) (entities.User, error)
 }
 
 type TodoList interface {
-	Create(userId int, list todo.TodoList) (int, error)
-	GetAll(userId int) ([]todo.TodoList, error)
-	GetById(userId, listId int) (todo.TodoList, error)
+	Create(userId int, list entities.TodoList) (int, error)
+	GetAll(userId int) ([]entities.TodoList, error)
+	GetById(userId, listId int) (entities.TodoList, error)
 	Delete(userId, listId int) error
-	Update(userId, listId int, input todo.UpdateListInput) error
+	Update(userId, listId int, input entities.UpdateListInput) error
 }
 
 type TodoItem interface {

@@ -1,7 +1,7 @@
 package service
 
 import (
-	todo "todo-app"
+	todo "todo-app/pkg/entities"
 	"todo-app/pkg/repository"
 )
 

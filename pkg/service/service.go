@@ -1,22 +1,22 @@
 package service
 
 import (
-	todo "todo-app"
+	"todo-app/pkg/entities"
 	"todo-app/pkg/repository"
 )
 
 type Authorization interface {
-	CreateUser(user todo.User) (int, error)
+	CreateUser(user entities.User) (int, error)
 	GenerateToken(name, password string) (string, error)
 	ParseToken(token string) (int, error)
 }
 
 type TodoList interface {
-	Create(userId int, list todo.TodoList) (int, error)
-	GetAll(userId int) ([]todo.TodoList, error)
-	GetById(userId, listId int) (todo.TodoList, error)
+	Create(userId int, list entities.TodoList) (int, error)
+	GetAll(userId int) ([]entities.TodoList, error)
+	GetById(userId, listId int) (entities.TodoList, error)
 	Delete(userId, listId int) error
-	Update(userId, listId int, input todo.UpdateListInput) error
+	Update(userId, listId int, input entities.UpdateListInput) error
 }
 
 type TodoItem interface {

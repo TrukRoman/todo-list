@@ -5,19 +5,21 @@ services:
     build: ./
     command: sh -c "./wait-for-postgres.sh db; /todo-app"
     ports:
-      - 8000:8000
+      - "8000:8000"
     depends_on:
       - db
     environment:
       - DB_PASSWORD=qwerty
 
   db:
-    restart: always
-    image: postgres:latest
+    image: postgres:13
+    restart: unless-stopped
     volumes:
-      - ./.database/postgres/data:/var/lib/postgresql/data
+      - postgres-data:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=qwerty
     ports:
-      - 5436:5432
-      -
+      - "5436:5432"
+
+volumes:
+  postgres-data:

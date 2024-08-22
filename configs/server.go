@@ -1,4 +1,4 @@
-package todo
+package configs
 
 import (
 	"context"
